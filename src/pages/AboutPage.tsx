@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSeo } from '@/lib/seo';
 import { Link } from 'react-router-dom';
 import { ArrowUpRight, Cloud, Cpu, Database, Globe, Layers, MonitorSmartphone } from 'lucide-react';
 import { profileData } from '@/data/profile';
@@ -16,7 +17,13 @@ const skillIcons: Record<string, React.ElementType> = {
   'Third-Party Integrations': Globe,
 };
 
-export const AboutPage: React.FC = () => (
+export const AboutPage: React.FC = () => {
+  useSeo({
+    title: 'About Us',
+    description: 'Guru Kirpa Infotech is an MSME-registered software and web design company on Railway Road, Doraha, Punjab, building websites, web apps, desktop software and mobile apps.',
+    path: '/about',
+  });
+  return (
   <div className="gk-page">
     <PageHero
       crumb="About"
@@ -126,4 +133,5 @@ export const AboutPage: React.FC = () => (
       </div>
     </section>
   </div>
-);
+  );
+};

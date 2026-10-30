@@ -212,7 +212,6 @@ export const projectsData: Project[] = [
     featured: false,
     imageGradient: "from-amber-600 via-orange-700 to-slate-900",
     coverImage: "/projects/mgs-machining.png",
-    tourVideo: "/projects/tours/mgs-services-tour.mp4",
     badge: "Live Website (Australia)"
   },
   {

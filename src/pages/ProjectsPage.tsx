@@ -2,10 +2,10 @@ import React, { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
 import { projectsData } from '@/data/projects';
-import type { Project, ProjectCategory } from '@/types/project';
+import type { ProjectCategory } from '@/types/project';
 import { PageHero } from '@/components/common/PageHero';
 import { ProjectCard } from '@/components/common/ProjectCard';
-import { ProjectModal } from '@/components/common/ProjectModal';
+import { useSeo } from '@/lib/seo';
 import { Reveal } from '@/components/common/Reveal';
 
 const filters: { label: string; value: ProjectCategory }[] = [
@@ -19,9 +19,13 @@ const filters: { label: string; value: ProjectCategory }[] = [
 ];
 
 export const ProjectsPage: React.FC = () => {
+  useSeo({
+    title: 'Our Projects: Websites, Web Apps, Desktop & Mobile Software',
+    description: 'Live websites, a Windows billing app, business platforms and mobile apps built by Guru Kirpa Infotech for retail, planning, education, legal and healthcare clients.',
+    path: '/projects',
+  });
+
   const [category, setCategory] = useState<ProjectCategory>('all');
-  const [selected, setSelected] = useState<Project | null>(null);
-  const [autoPlay, setAutoPlay] = useState(false);
 
   const counts = useMemo(() => {
     const map: Record<string, number> = { all: projectsData.length };
@@ -31,10 +35,6 @@ export const ProjectsPage: React.FC = () => {
 
   const visible = projectsData.filter((project) => category === 'all' || project.category === category);
 
-  const open = (project: Project, playTour = false) => {
-    setAutoPlay(playTour);
-    setSelected(project);
-  };
 
   return (
     <div className="gk-page">
@@ -57,7 +57,7 @@ export const ProjectsPage: React.FC = () => {
 
           <div className="gk-work-grid">
             {visible.map((project, i) => (
-              <Reveal key={project.id} delay={(i % 3) * 70}><ProjectCard project={project} onOpen={open} /></Reveal>
+              <Reveal key={project.id} delay={(i % 3) * 70}><ProjectCard project={project} /></Reveal>
             ))}
           </div>
 
@@ -75,7 +75,6 @@ export const ProjectsPage: React.FC = () => {
         </div>
       </section>
 
-      <ProjectModal project={selected} autoPlayTour={autoPlay} onClose={() => { setSelected(null); setAutoPlay(false); }} />
     </div>
   );
 };

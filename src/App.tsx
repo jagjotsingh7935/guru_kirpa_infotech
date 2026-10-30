@@ -8,6 +8,7 @@ const HomePage = lazy(() => import('./pages/HomePage').then((module) => ({ defau
 const AboutPage = lazy(() => import('./pages/AboutPage').then((module) => ({ default: module.AboutPage })));
 const ServicesPage = lazy(() => import('./pages/ServicesPage').then((module) => ({ default: module.ServicesPage })));
 const ProjectsPage = lazy(() => import('./pages/ProjectsPage').then((module) => ({ default: module.ProjectsPage })));
+const ProjectDetailPage = lazy(() => import('./pages/ProjectDetailPage').then((module) => ({ default: module.ProjectDetailPage })));
 const TestimonialsPage = lazy(() => import('./pages/TestimonialsPage').then((module) => ({ default: module.TestimonialsPage })));
 const ContactPage = lazy(() => import('./pages/ContactPage').then((module) => ({ default: module.ContactPage })));
 
@@ -35,6 +36,7 @@ export const App: React.FC = () => {
 
               {/* Route 4: Projects */}
               <Route path="/projects" element={<ProjectsPage />} />
+              <Route path="/projects/:projectId" element={<ProjectDetailPage />} />
 
               {/* Route 5: Testimonials */}
               <Route path="/testimonials" element={<TestimonialsPage />} />

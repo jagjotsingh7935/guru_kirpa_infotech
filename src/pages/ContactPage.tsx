@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useSeo } from '@/lib/seo';
 import { ArrowRight, ArrowUpRight, BadgeCheck, Check, Copy, Mail, MapPin, MessageCircle, Phone } from 'lucide-react';
 import { profileData } from '@/data/profile';
 import { PageHero } from '@/components/common/PageHero';
@@ -6,6 +7,11 @@ import { PageHero } from '@/components/common/PageHero';
 const serviceOptions = ['Website design', 'Web application', 'Windows desktop software', 'Mobile app', 'Backend & APIs', 'Automation & integrations', 'Other / not sure'];
 
 export const ContactPage: React.FC = () => {
+  useSeo({
+    title: 'Contact Us',
+    description: 'Call, WhatsApp, email or visit Guru Kirpa Infotech on Railway Road, Doraha, Punjab to discuss your website, web app, desktop software or mobile app.',
+    path: '/contact',
+  });
   const [form, setForm] = useState({ name: '', email: '', phone: '', service: serviceOptions[0], message: '' });
   const [draftReady, setDraftReady] = useState(false);
   const [copied, setCopied] = useState(false);

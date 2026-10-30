@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, ArrowUpRight, BadgeCheck, Code2, Handshake, Layers3, MapPin, Rocket, ShieldCheck } from 'lucide-react';
 import { projectsData } from '@/data/projects';
@@ -6,10 +6,9 @@ import { servicesData } from '@/data/services';
 import { profileData } from '@/data/profile';
 import { LogoMark } from '@/components/brand/Logo';
 import { ProjectCard } from '@/components/common/ProjectCard';
-import { ProjectModal } from '@/components/common/ProjectModal';
 import { Reveal } from '@/components/common/Reveal';
 import { iconTone, serviceIcons } from '@/lib/serviceIcons';
-import type { Project } from '@/types/project';
+import { useSeo } from '@/lib/seo';
 
 const homeServices = ['website-design', 'web-apps', 'desktop-apps', 'flutter-apps', 'rest-apis', 'business-automation'];
 
@@ -23,16 +22,24 @@ const reasons = [
 ];
 
 export const HomePage: React.FC = () => {
-  const [selected, setSelected] = useState<Project | null>(null);
-  const [autoPlay, setAutoPlay] = useState(false);
+  useSeo({
+    title: 'Software & Web Design Company in Doraha, Punjab',
+    description: 'Guru Kirpa Infotech designs and builds websites, web applications, Windows desktop software and mobile apps for businesses in India and Australia.',
+    path: '/',
+    jsonLd: {
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      name: profileData.name,
+      url: window.location.origin,
+      telephone: profileData.phone,
+      email: profileData.email,
+      address: { '@type': 'PostalAddress', streetAddress: 'Railway Road', addressLocality: 'Doraha', addressRegion: 'Punjab', addressCountry: 'IN' },
+    },
+  });
 
   const featured = projectsData.filter((project) => project.featured).slice(0, 6);
   const services = homeServices.map((id) => servicesData.find((service) => service.id === id)!).filter(Boolean);
 
-  const open = (project: Project, playTour = false) => {
-    setAutoPlay(playTour);
-    setSelected(project);
-  };
 
   return (
     <div className="gk-page">
@@ -118,7 +125,7 @@ export const HomePage: React.FC = () => {
           </Reveal>
           <div className="gk-work-grid">
             {featured.map((project, i) => (
-              <Reveal key={project.id} delay={(i % 3) * 80}><ProjectCard project={project} onOpen={open} /></Reveal>
+              <Reveal key={project.id} delay={(i % 3) * 80}><ProjectCard project={project} /></Reveal>
             ))}
           </div>
           <Reveal><p style={{ marginTop: 40, textAlign: 'center' }}><Link className="gk-btn gk-btn--outline" to="/projects">View all {projectsData.length} projects <ArrowRight size={17} /></Link></p></Reveal>
@@ -199,7 +206,6 @@ export const HomePage: React.FC = () => {
         </div>
       </section>
 
-      <ProjectModal project={selected} autoPlayTour={autoPlay} onClose={() => { setSelected(null); setAutoPlay(false); }} />
     </div>
   );
 };

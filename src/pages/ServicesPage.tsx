@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSeo } from '@/lib/seo';
 import { Link } from 'react-router-dom';
 import { ArrowUpRight, CheckCircle2, Code2 } from 'lucide-react';
 import { servicesData } from '@/data/services';
@@ -6,7 +7,13 @@ import { PageHero } from '@/components/common/PageHero';
 import { Reveal } from '@/components/common/Reveal';
 import { iconTone, serviceIcons } from '@/lib/serviceIcons';
 
-export const ServicesPage: React.FC = () => (
+export const ServicesPage: React.FC = () => {
+  useSeo({
+    title: 'Website, Web App, Desktop & Mobile Development Services',
+    description: 'Website design, custom web applications, Windows desktop software, Flutter mobile apps, APIs, payments, WhatsApp automation and cloud deployment from Guru Kirpa Infotech in Doraha, Punjab.',
+    path: '/services',
+  });
+  return (
   <div className="gk-page">
     <PageHero
       crumb="Services"
@@ -51,4 +58,5 @@ export const ServicesPage: React.FC = () => (
       </div>
     </section>
   </div>
-);
+  );
+};

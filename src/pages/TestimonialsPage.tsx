@@ -1,11 +1,18 @@
 import React from 'react';
+import { useSeo } from '@/lib/seo';
 import { Link } from 'react-router-dom';
 import { ArrowUpRight, Star } from 'lucide-react';
 import { testimonialsData } from '@/data/testimonials';
 import { PageHero } from '@/components/common/PageHero';
 import { Reveal } from '@/components/common/Reveal';
 
-export const TestimonialsPage: React.FC = () => (
+export const TestimonialsPage: React.FC = () => {
+  useSeo({
+    title: 'Client Reviews',
+    description: 'What clients say about working with Guru Kirpa Infotech across legal services, education, mobility and health.',
+    path: '/testimonials',
+  });
+  return (
   <div className="gk-page">
     <PageHero
       crumb="Reviews"
@@ -46,4 +53,5 @@ export const TestimonialsPage: React.FC = () => (
       </div>
     </section>
   </div>
-);
+  );
+};

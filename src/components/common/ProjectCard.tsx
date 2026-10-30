@@ -1,28 +1,18 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowUpRight, ExternalLink, Monitor, Play } from 'lucide-react';
 import type { Project } from '@/types/project';
 
 interface ProjectCardProps {
   project: Project;
-  onOpen: (project: Project, playTour?: boolean) => void;
 }
 
-export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpen }) => {
+/** A project teaser. The whole card links to the project's own page, so every project has a crawlable URL. */
+export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   const isDesktop = project.platform === 'desktop';
+  const href = '/projects/' + project.id;
   return (
-    <article
-      className="gk-work"
-      role="button"
-      tabIndex={0}
-      aria-label={'View case study: ' + project.title}
-      onClick={() => onOpen(project)}
-      onKeyDown={(event) => {
-        if (event.target === event.currentTarget && (event.key === 'Enter' || event.key === ' ')) {
-          event.preventDefault();
-          onOpen(project);
-        }
-      }}
-    >
+    <article className="gk-work">
       <div className={'gk-work-media' + (project.coverImage ? '' : ' bg-gradient-to-tr ' + project.imageGradient)}>
         {project.coverImage ? (
           <img src={project.coverImage} alt={'Screenshot of ' + project.title} loading="lazy" />
@@ -37,19 +27,14 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpen }) => 
           ) : <span />}
         </div>
         {project.tourVideo && (
-          <button
-            type="button"
-            className="gk-play"
-            onClick={(event) => { event.stopPropagation(); onOpen(project, true); }}
-            aria-label={'Play video tour of ' + project.title}
-          >
+          <Link to={href + '?tour=1'} className="gk-play" aria-label={'Play video tour of ' + project.title}>
             <Play size={13} fill="currentColor" /> {project.tourLabel ?? 'Watch tour'}
-          </button>
+          </Link>
         )}
       </div>
       <div className="gk-work-body">
         <span className="gk-work-cat">{project.categoryLabel}</span>
-        <h3>{project.title.split(' — ')[0]}</h3>
+        <h3><Link to={href} className="gk-work-link">{project.title.split(' — ')[0]}</Link></h3>
         <p>{project.description}</p>
         <div className="gk-tags">
           {project.tags.slice(0, 4).map((tag) => <span className="gk-tag" key={tag}>{tag}</span>)}
@@ -57,13 +42,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpen }) => 
         <div className="gk-work-foot">
           <span>Case study <ArrowUpRight size={15} /></span>
           {project.liveUrl && (
-            <a
-              className="gk-work-visit"
-              href={project.liveUrl}
-              target="_blank"
-              rel="noreferrer"
-              onClick={(event) => event.stopPropagation()}
-            >
+            <a className="gk-work-visit" href={project.liveUrl} target="_blank" rel="noreferrer">
               Visit site <ExternalLink size={13} />
             </a>
           )}
