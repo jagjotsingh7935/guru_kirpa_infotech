@@ -1,0 +1,69 @@
+@import "tailwindcss";
+@import "./gk.css";
+
+@layer base {
+  :root {
+    --font-heading: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  }
+
+  html {
+    font-family: var(--font-sans);
+    scroll-behavior: initial; /* Handled smoothly by Lenis */
+  }
+
+  body {
+    background: #090f1f;
+    color: #16213a;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+
+  button {
+    cursor: pointer;
+    font: inherit;
+  }
+}
+
+/* Lenis recommended CSS */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #090f1f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2a3556;
+  border-radius: 9999px;
+  border: 2px solid #090f1f;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3d4b76;
+}
