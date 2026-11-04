@@ -62,8 +62,8 @@ export const HomePage: React.FC = () => {
 
           <div className="gk-stage" role="img" aria-label="A live business website and a Windows billing desktop app built by Guru Kirpa Infotech">
             <div className="gk-window gk-window--a">
-              <div className="gk-window-bar"><i /><i /><i /><span>suhagjewellers.vercel.app</span></div>
-              <img src="/projects/suhag-jewellers.webp" alt="" />
+              <div className="gk-window-bar"><i /><i /><i /><span>permitshub.com.au</span></div>
+              <img src="/projects/permitshub.webp" alt="" />
             </div>
             <div className="gk-window gk-window--b">
               <div className="gk-window-bar gk-window-bar--app"><i /><i /><i /><span style={{ background: 'transparent', color: '#b9c4de' }}>Billing · Windows desktop app</span></div>
