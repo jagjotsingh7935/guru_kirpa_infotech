@@ -471,4 +471,36 @@ export const projectsData: Project[] = [
     imageGradient: "from-rose-600 via-pink-700 to-slate-900",
     badge: "Flutter Mobile App"
   },
+  {
+    id: "appointment-system",
+    title: "AppointmentSystem — Automated Booking & Dispatch",
+    subtitle: "Automated calendar scheduling & dispatch coordination",
+    category: "fullstack",
+    categoryLabel: "Enterprise Scheduling",
+    description: "A robust online booking and reservation engine featuring calendar synchronization, staff availability allocation, client booking portals, and dispatch status tracking.",
+    longDescription: "Features a modern React frontend connected to a dedicated Django appointment backend. Designed to streamline service booking for service businesses, doctors, and consultants, preventing double bookings with intelligent buffer slot calculation.",
+    tags: ["React.js", "Django REST Framework", "Calendar Sync", "Scheduling", "Python"],
+    features: [
+      "Interactive calendar view displaying open, pending, and confirmed booking slots",
+      "Customizable working hours, break times, and automated buffer windows",
+      "Automated email and SMS confirmation dispatch for clients and staff",
+      "Administrative dispatch portal with instant schedule rescheduling and cancellation"
+    ],
+    architecture: {
+      frontend: "React.js, Tailwind CSS, Date-Fns",
+      backend: "Django REST Framework, Python",
+      database: "PostgreSQL / SQLite",
+      services: ["Calendar Conflict Resolver", "Email Notification Dispatch"]
+    },
+    metrics: [
+      { label: "Double Bookings", value: "Zero" },
+      { label: "Automation", value: "100% Calendar Sync" },
+      { label: "Client Ease", value: "3-Step Booking" }
+    ],
+    githubUrl: "https://github.com/jagjotsingh7935",
+    liveUrl: import.meta.env.VITE_PROJECT_APPOINTMENT_URL || "",
+    featured: false,
+    imageGradient: "from-violet-600 via-purple-800 to-slate-950",
+    badge: "Scheduling Engine"
+  },
 ];
