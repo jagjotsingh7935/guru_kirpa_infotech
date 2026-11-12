@@ -170,18 +170,23 @@ export const projectsData: Project[] = [
     featured: true,
     platform: "desktop",
     imageGradient: "from-indigo-600 via-violet-700 to-slate-950",
-    coverImage: "/projects/billing/02-billing-dashboard.webp",
+    coverImage: "/projects/billing/app-01-dashboard.webp",
     tourVideo: "/projects/billing/billing-tour.mp4",
     tourLabel: "Product tour",
     screenshots: [
-      { url: "/projects/billing/02-billing-dashboard.webp", title: "Owner Dashboard", caption: "Live bills, net sales, top seller, a seven-day sales trend and the payment-mode split in one view." },
-      { url: "/projects/billing/03-billing-new-bill.webp", title: "New Bill with Live Receipt Preview", caption: "Item, salesperson and rate per line, with a GST receipt that updates as the cashier types." },
-      { url: "/projects/billing/04-billing-bills.webp", title: "Bills & Search", caption: "Every bill in one list, searchable by bill number, customer or mobile number." },
-      { url: "/projects/billing/05-billing-staff.webp", title: "Staff & Cashier Accounts", caption: "Salespeople and cashier sign-ins managed in one place, each with their own sales profile." },
-      { url: "/projects/billing/06-billing-reports.webp", title: "Staff Sales by Day", caption: "Sold, returned and net per salesperson per day, filterable by date range and exportable." },
-      { url: "/projects/billing/07-billing-day-close.webp", title: "Day Closing Report", caption: "Bills, tax, returns, net collected and payment modes, ready to print or export." },
-      { url: "/projects/billing/08-billing-customers.webp", title: "Customer Directory", caption: "Customer history built automatically from billing, for repeat-customer lookup." },
-      { url: "/projects/billing/09-billing-settings.webp", title: "Themes, Language & Printing Settings", caption: "Colour themes, light and dark mode, English, Hindi and Punjabi menus and printer setup." }
+      { url: "/projects/billing/app-01-dashboard.webp", title: "Owner Dashboard", caption: "Today's bills, net sales, expenses, Udhar pending, top seller, a seven-day sales trend and the payment-mode split in one view." },
+      { url: "/projects/billing/app-02-new-bill.webp", title: "New Bill with Live Receipt Preview", caption: "Item, salesperson and rate per line, with customer GSTIN and PO number, and a GST receipt that updates as the cashier types." },
+      { url: "/projects/billing/app-03-bills.webp", title: "Bills & Search", caption: "Every bill in one list, searchable by bill number, customer or mobile number, with Udhar bills marked." },
+      { url: "/projects/billing/app-04-udhar.webp", title: "Udhar Customers", caption: "Everyone who owes money, with the amount pending and the date of their last Udhar bill." },
+      { url: "/projects/billing/app-05-udhar-customer.webp", title: "Udhar Customer Ledger", caption: "Bills on credit, part payments with receipts, and a shortcut to return items from any bill." },
+      { url: "/projects/billing/app-06-expenses.webp", title: "Expenses with GST", caption: "Spending by category with GST paid and claimable, plus vendor details and attachments." },
+      { url: "/projects/billing/app-07-gst.webp", title: "GST Reports", caption: "HSN summary, B2B and B2C, tax by rate, sales register, credit notes and input credit, ready for the accountant." },
+      { url: "/projects/billing/app-08-staff-salary.webp", title: "Staff Salary & Commission", caption: "Monthly salary, commission, advances and salary payments for each salesperson." },
+      { url: "/projects/billing/app-09-reports.webp", title: "Staff Sales by Day", caption: "Sold, returned and net per salesperson per day, filterable by date range and exportable." },
+      { url: "/projects/billing/app-10-day-close.webp", title: "Day Closing Report", caption: "Bills, tax, returns, net collected, Udhar and payment modes, ready to print or export." },
+      { url: "/projects/billing/app-11-customers.webp", title: "Customer Directory", caption: "Customer history built automatically from billing, for repeat-customer lookup." },
+      { url: "/projects/billing/app-12-settings.webp", title: "Themes, Language & Printing Settings", caption: "Colour themes, light and dark mode, English, Hindi and Punjabi menus and printer setup." },
+      { url: "/projects/billing/app-13-bill-designer.webp", title: "Bill Designs", caption: "Design your own bill for any paper size, with a live preview of the printed result." }
     ],
     badge: "Windows Desktop App"
   },
@@ -333,51 +338,20 @@ export const projectsData: Project[] = [
     liveUrl: import.meta.env.VITE_PROJECT_ADVOCATE_URL || "https://taxcontrolindia.in",
     featured: true,
     imageGradient: "from-blue-600 via-indigo-700 to-slate-900",
-    coverImage: "/projects/taxcontrol/01-taxcontrol-dashboard-full.webp",
+    coverImage: "/projects/taxcontrol/app-01-dashboard.webp",
     tourVideo: "/projects/tours/advocate-cms-tour.mp4",
     tourLabel: "Product tour",
     screenshots: [
-      {
-        url: "/projects/taxcontrol/01-taxcontrol-dashboard-full.webp",
-        title: "Master Enterprise Dashboard",
-        caption: "Real-time key business indicators, active client counts, file status tracker, quick GST/ITR search, and WhatsApp notifications monitor."
-      },
-      {
-        url: "/projects/taxcontrol/02-taxcontrol-clientlist-full.webp",
-        title: "Clients Directory & Filing Records",
-        caption: "Centralized client database with quick WhatsApp dispatch, status badges, PAN/GSTIN tracking, and encrypted file access."
-      },
-      {
-        url: "/projects/taxcontrol/03-taxcontrol-templates-full.webp",
-        title: "WhatsApp Cloud API Templates",
-        caption: "Meta-approved dynamic message templates for automated hearing date reminders, payment notices, and compliance alerts."
-      },
-      {
-        url: "/projects/taxcontrol/04-taxcontrol-whatsapp-full.webp",
-        title: "WhatsApp Cloud API — Live Client Compliance Chat",
-        caption: "Real-time client messaging portal with automated ITR/GST reminder templates, interactive confirmation buttons, and encrypted document uploads."
-      },
-      {
-        url: "/projects/taxcontrol/05-taxcontrol-clientprofile-full.webp",
-        title: "Client Profile & Statutory Tax Identity Dossier",
-        caption: "Comprehensive corporate KYC records, verified GSTIN/PAN credentials, linked legal counsel, audit status, and entity master data."
-      }
-    ,
-      {
-        url: "/projects/advocate/05-whatsapp-inbox.webp",
-        title: "WhatsApp Inbox with Labels",
-        caption: "Client conversations in one inbox, with unread counts, labels such as Urgent and Documents, and quick replies."
-      },
-      {
-        url: "/projects/advocate/06-whatsapp-logs.webp",
-        title: "Reminder Delivery Logs",
-        caption: "Every reminder with its status (sent, delivered, read or failed), phone number and time, searchable and exportable."
-      },
-      {
-        url: "/projects/advocate/08-permissions.webp",
-        title: "Roles and Permissions",
-        caption: "Group-based permissions let each staff role see only the modules it needs."
-      }
+      { url: "/projects/taxcontrol/app-01-dashboard.webp", title: "Dashboard", caption: "Clients, WhatsApp inbox, sent reminders and active templates at a glance, with your own task summary." },
+      { url: "/projects/taxcontrol/app-02-tasks.webp", title: "Team Tasks", caption: "Assign work with priority, due date and attachments, grouped by status with overdue tasks flagged." },
+      { url: "/projects/taxcontrol/app-03-task-board.webp", title: "Task Board", caption: "The same tasks as a board: To Do, In Progress and Done." },
+      { url: "/projects/taxcontrol/app-04-clients.webp", title: "Clients Directory", caption: "Search and filter clients by city, audit status, category and sub-category." },
+      { url: "/projects/taxcontrol/app-05-client-profile.webp", title: "Client Profile", caption: "Identity, tax numbers, bank details, linked accountant and audit status for each client." },
+      { url: "/projects/taxcontrol/app-06-inbox.webp", title: "WhatsApp Inbox", caption: "Client conversations with labels and unread counts, and the full chat in one place." },
+      { url: "/projects/taxcontrol/app-07-template-sender.webp", title: "Template Sender", caption: "Send approved templates to a priority list of conversations or in bulk from Excel." },
+      { url: "/projects/taxcontrol/app-08-logs.webp", title: "Delivery Logs", caption: "Every reminder with its status (sent, delivered, read or failed), phone number, PAN and time." },
+      { url: "/projects/taxcontrol/app-09-permissions.webp", title: "Roles and Permissions", caption: "Group-based permissions let each staff role see only the modules it needs." },
+      { url: "/projects/taxcontrol/app-10-dark-mode.webp", title: "Dark Mode", caption: "A light and a dark theme for long working days." }
     ],
     badge: "Live Production SaaS"
   },

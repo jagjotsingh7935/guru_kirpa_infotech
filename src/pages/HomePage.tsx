@@ -67,7 +67,7 @@ export const HomePage: React.FC = () => {
             </div>
             <div className="gk-window gk-window--b">
               <div className="gk-window-bar gk-window-bar--app"><i /><i /><i /><span style={{ background: 'transparent', color: '#b9c4de' }}>Billing · Windows desktop app</span></div>
-              <img src="/projects/billing/02-billing-dashboard.webp" alt="" />
+              <img src="/projects/billing/app-01-dashboard.webp" alt="" />
             </div>
             <div className="gk-chip gk-chip--a">
               <span className="gk-chip-icon"><BadgeCheck size={20} /></span>
