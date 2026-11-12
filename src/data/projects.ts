@@ -165,7 +165,6 @@ export const projectsData: Project[] = [
       { label: "Money Precision", value: "100% Decimal" },
       { label: "Automated Tests", value: "300+" }
     ],
-    githubUrl: "https://github.com/jagjotsingh7935/billing_software",
     liveUrl: "",
     featured: true,
     platform: "desktop",
@@ -216,7 +215,6 @@ export const projectsData: Project[] = [
       { label: "Performance", value: "98/100 Lighthouse" },
       { label: "Region", value: "Australia (AU)" }
     ],
-    githubUrl: "https://github.com/jagjotsingh7935",
     liveUrl: import.meta.env.VITE_PROJECT_MGS_MACHINING_URL || "https://mgsmachining.com.au/",
     featured: false,
     imageGradient: "from-amber-600 via-orange-700 to-slate-900",
@@ -249,7 +247,6 @@ export const projectsData: Project[] = [
       { label: "SKU Management", value: "Multi-Variant" },
       { label: "Billing Accuracy", value: "100% Automated" }
     ],
-    githubUrl: "https://github.com/jagjotsingh7935",
     liveUrl: import.meta.env.VITE_PROJECT_CLOTHING_POS_URL || "",
     featured: false,
     imageGradient: "from-emerald-700 via-green-800 to-slate-950",
@@ -334,7 +331,6 @@ export const projectsData: Project[] = [
       { label: "Security", value: "CSP Hardened" },
       { label: "Client Alerts", value: "100% Automated" }
     ],
-    githubUrl: "https://github.com/jagjotsingh7935",
     liveUrl: import.meta.env.VITE_PROJECT_ADVOCATE_URL || "https://taxcontrolindia.in",
     featured: true,
     imageGradient: "from-blue-600 via-indigo-700 to-slate-900",
@@ -382,7 +378,6 @@ export const projectsData: Project[] = [
       { label: "Architecture", value: "Multi-Tenant" },
       { label: "Quiz Engine", value: "Automated Grading" }
     ],
-    githubUrl: "https://github.com/jagjotsingh7935",
     liveUrl: import.meta.env.VITE_PROJECT_LMS_URL || "http://72.61.171.121/",
     featured: true,
     imageGradient: "from-emerald-600 via-teal-700 to-slate-900",
@@ -415,7 +410,6 @@ export const projectsData: Project[] = [
       { label: "Fleet Coverage", value: "Multi-Tier" },
       { label: "UX Rating", value: "4.9/5" }
     ],
-    githubUrl: "https://github.com/jagjotsingh7935",
     liveUrl: import.meta.env.VITE_PROJECT_SUNNY_TAXI_URL || "https://1300silvertopcabs.com.au/",
     featured: false,
     imageGradient: "from-amber-500 via-orange-600 to-stone-900",
@@ -449,7 +443,6 @@ export const projectsData: Project[] = [
       { label: "Frame Rate", value: "Smooth 60 FPS" },
       { label: "Auth Flow", value: "OTP-Based" }
     ],
-    githubUrl: "https://github.com/jagjotsingh7935",
     liveUrl: import.meta.env.VITE_PROJECT_FITNESS_URL || "",
     featured: false,
     imageGradient: "from-rose-600 via-pink-700 to-slate-900",
@@ -481,7 +474,6 @@ export const projectsData: Project[] = [
       { label: "Automation", value: "100% Calendar Sync" },
       { label: "Client Ease", value: "3-Step Booking" }
     ],
-    githubUrl: "https://github.com/jagjotsingh7935",
     liveUrl: import.meta.env.VITE_PROJECT_APPOINTMENT_URL || "",
     featured: false,
     imageGradient: "from-violet-600 via-purple-800 to-slate-950",

@@ -3,7 +3,6 @@ import { Link, useParams, useSearchParams } from 'react-router-dom';
 import { ArrowRight, ArrowUpRight, CheckCircle2, ExternalLink, Globe, Layers, Monitor, Play } from 'lucide-react';
 import { projectsData } from '@/data/projects';
 import { profileData } from '@/data/profile';
-import { GithubIcon } from '@/components/common/Icons';
 import { ProjectCard } from '@/components/common/ProjectCard';
 import { ProjectGallery } from '@/components/common/ProjectGallery';
 import { Reveal } from '@/components/common/Reveal';
@@ -85,7 +84,6 @@ export const ProjectDetailPage: React.FC = () => {
             {project.additionalLiveUrls?.map((link) => (
               <a key={link.url} className="gk-btn gk-btn--ghost" href={link.url} target="_blank" rel="noreferrer"><Globe size={17} /> {link.label}</a>
             ))}
-            {project.githubUrl && <a className="gk-btn gk-btn--ghost" href={project.githubUrl} target="_blank" rel="noreferrer"><GithubIcon className="h-4 w-4" /> Source code</a>}
             {!project.liveUrl && <Link className="gk-btn gk-btn--primary" to="/contact">Request a similar project <ArrowUpRight size={17} /></Link>}
           </div>
         </div>

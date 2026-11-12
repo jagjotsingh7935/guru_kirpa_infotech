@@ -29,7 +29,6 @@ export interface Project {
     label: string;
     value: string;
   }[];
-  githubUrl?: string;
   liveUrl?: string;
   additionalLiveUrls?: { label: string; url: string }[];
   featured: boolean;
