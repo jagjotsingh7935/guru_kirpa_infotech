@@ -135,17 +135,21 @@ export const projectsData: Project[] = [
   {
     id: "retail-billing-ledger",
     title: "Billing — Retail POS & Staff Sales Ledger",
-    subtitle: "Windows desktop billing app with live receipt preview, staff credit and day-close reports",
+    subtitle: "Windows desktop billing app with live receipts, Udhar credit, GST reports, expenses and staff payroll",
     category: "desktop",
     categoryLabel: "Desktop App / Retail ERP",
-    description: "A Windows desktop billing application for multi-store retailers: fast bill entry with a live receipt preview, per-staff sales credit, returns and exchanges, GST-aware invoices, day-close reports and thermal or A4 printing.",
+    description: "A Windows desktop billing application for multi-store retailers: fast bill entry with a live receipt preview, per-staff sales credit, returns and exchanges, Udhar (pay-later) ledgers, GST reports, expenses, staff payroll, custom bill designs and printing on any paper size.",
     longDescription: "Built as an Electron and React desktop client on a Django 5 REST API, Billing is a point-of-sale and staff-ledger suite for retail organisations. Cashiers create bills in seconds while a live receipt preview shows exactly what will print; every line can be credited to a salesperson, and returns debit the staff member who made the sale. Owners see a live dashboard, sales-by-staff reports, a printable day-close report and customer history. Money is handled with exact decimals end to end (NUMERIC(12,2) in PostgreSQL and Python Decimal), receipts print to any Windows printer from 58 mm thermal rolls to A4, and the app ships as a Windows installer with English, Hindi and Punjabi menus.",
     tags: ["Electron", "React 18", "TypeScript", "Django 5", "Django REST Framework", "PostgreSQL", "Docker", "Nginx", "Thermal Printing"],
     features: [
       "Fast bill entry with keyboard shortcuts and a live GST receipt preview",
       "Per-staff sales credit: returns and exchanges debit the staff member who made the sale",
+      "Udhar (pay later) bills with a ledger for every customer, part payments, payment receipts and returns",
+      "GST reports for filing: HSN summary, B2B and B2C, tax by rate, sales register, credit notes, input credit and an accountant pack",
+      "Expenses with GST, vendor, bill number and attachments, plus staff salary, commission and advances with payroll",
+      "Bill designs: build your own bill for any paper size, with customer GSTIN and PO number on the invoice",
       "Owner dashboard with sales trend, payment-mode split, top seller and day-close report",
-      "Exact decimal money handling with zero floating-point drift, covered by an 81-test suite",
+      "Exact decimal money handling with zero floating-point drift, covered by more than 300 automated tests",
       "Multi-organisation support with cashier-only views and a configurable business-day cut-off",
       "Prints to 58 mm and 80 mm thermal, A4 and A5, with colour themes and English, Hindi and Punjabi menus",
       "Dockerised backend with Nginx and a GitHub Actions workflow that builds the Windows installer"
@@ -154,12 +158,12 @@ export const projectsData: Project[] = [
       frontend: "Electron 33, React 18, TypeScript, Vite, TanStack Query",
       backend: "Django 5, Django REST Framework, SimpleJWT, Python 3.12",
       database: "PostgreSQL with strict NUMERIC(12,2) decimal ledger schema",
-      services: ["Docker Compose & Nginx", "Windows Print Driver Integration", "NSIS Windows Installer", "81 Automated Tests"]
+      services: ["Docker Compose & Nginx", "Windows Print Driver Integration", "NSIS Windows Installer", "300+ Automated Tests"]
     },
     metrics: [
       { label: "Platform", value: "Windows Desktop" },
       { label: "Money Precision", value: "100% Decimal" },
-      { label: "Automated Tests", value: "81 Passing" }
+      { label: "Automated Tests", value: "300+" }
     ],
     githubUrl: "https://github.com/jagjotsingh7935/billing_software",
     liveUrl: "",
@@ -248,12 +252,12 @@ export const projectsData: Project[] = [
   },
   {
     id: "whatsapp-chatbot-studio",
-    title: "Nexora Conversation Studio — WhatsApp Chatbot & Flow Builder",
+    title: "Rapport Conversation Studio — WhatsApp Chatbot & Flow Builder",
     subtitle: "Visual flow builder, template manager and live inbox for WhatsApp automation",
     category: "enterprise",
     categoryLabel: "WhatsApp Automation / SaaS",
     description: "A web console for building and running WhatsApp chatbots: drag-and-drop conversation flows, Meta-approved message templates, contact imports, a conversation inbox and 24-hour billing-window tracking.",
-    longDescription: "Nexora Conversation Studio lets a business design WhatsApp conversations without writing code. Teams drag blocks onto a canvas (messages, templates, quick-reply buttons, selectable lists, user input, conditions, REST API calls, file uploads and agent hand-off), connect them into a flow and save variables such as the patient's name or chosen treatment. Flows can answer incoming chats or be started for imported contacts, WhatsApp message templates are created and tracked through Meta's approval states, and every conversation is stored so staff can review the full chat, its status and its 24-hour billing window. Each organisation has its own users, roles and linked WhatsApp business number.",
+    longDescription: "Rapport Conversation Studio lets a business design WhatsApp conversations without writing code. Teams drag blocks onto a canvas (messages, templates, quick-reply buttons, selectable lists, user input, conditions, REST API calls, file uploads and agent hand-off), connect them into a flow and save variables such as the patient's name or chosen treatment. Flows can answer incoming chats or be started for imported contacts, WhatsApp message templates are created and tracked through Meta's approval states, and every conversation is stored so staff can review the full chat, its status and its 24-hour billing window. Each organisation has its own users, roles and linked WhatsApp business number.",
     tags: ["React", "TypeScript", "React Flow", "Tailwind CSS", "Django REST Framework", "WhatsApp Cloud API", "JWT Auth", "REST API"],
     features: [
       "Drag-and-drop flow canvas with start, message, template, buttons, list, user input, condition, REST API, file upload and end or hand-off blocks",
@@ -276,6 +280,7 @@ export const projectsData: Project[] = [
     ],
     featured: true,
     platform: "web",
+    liveUrl: "https://rapport.gkinfotech.io/",
     imageGradient: "from-amber-500 via-orange-700 to-slate-950",
     coverImage: "/projects/chatbot/03a-flow-zoomed.webp",
     tourVideo: "/projects/tours/chatbot-tour.mp4",
@@ -298,11 +303,15 @@ export const projectsData: Project[] = [
     subtitle: "Enterprise legal practice, case management & GST/ITR compliance portal",
     category: "fullstack",
     categoryLabel: "Legal Tech & Tax Compliance / Full Stack",
-    description: "A secure, role-based practice management and tax compliance system. Features real-time case & file tracking, automated WhatsApp Cloud API alerts, Google Drive encrypted storage, and GST/ITR client management.",
+    description: "A secure, role-based practice management and tax compliance system. Features real-time case & file tracking, a shared team task board, automated WhatsApp Cloud API alerts, Google Drive encrypted storage, and GST/ITR client management.",
     longDescription: "Tax Control India & Advocate CMS streamlines practice management and tax compliance operations for legal chambers and taxation advisors. It integrates a secure client-case tracking dashboard with strict Content Security Policy (CSP) nonce-based hardening, automated JWT refresh token rotation, Google Drive API for cloud legal document storage, Meta WhatsApp Cloud API for automated client compliance notifications, and granular Django RBAC permission matrices.",
     tags: ["Django REST Framework", "React.js", "Material UI", "PostgreSQL", "Google Drive API", "WhatsApp Business API", "JWT Auth", "Python"],
     features: [
       "Role-Based Access Control (RBAC) across Advocate, Staff, and Client portals with Django group permissions",
+      "Task management for the team: assign work with priority, due date and attachments, in a list or board view",
+      "Client onboarding: five-step registration, temporary clients and approval of members added by clients",
+      "WhatsApp inbox, template sender, scheduled messages and delivery logs, with Excel and PDF exports of conversations",
+      "Light and dark themes, staff accounts with activity logs and a permission matrix for every role",
       "Automated hearing date alerts & compliance notices sent directly to clients via WhatsApp Business API",
       "Cloud legal document storage and sync integrated with Google Drive API",
       "Real-time file status tracking, active client directory, and instant PAN/GSTIN verification lookup",
