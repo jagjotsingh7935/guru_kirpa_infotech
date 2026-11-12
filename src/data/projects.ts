@@ -265,7 +265,8 @@ export const projectsData: Project[] = [
       "Template manager for WhatsApp message templates with Meta approval states: approved, pending and rejected",
       "Contact import from Excel, and one-click start of an outgoing flow for selected contacts",
       "Conversation inbox and history with the full chat, status (active, ended or handed off) and WhatsApp 24-hour billing and free windows",
-      "Organisation-scoped users, groups and permissions, with Meta account linking for each WhatsApp business number"
+      "Organisation-scoped users, groups and permissions, with Meta account linking for each WhatsApp business number",
+      "Overview dashboard, Ctrl+K quick search, light and dark themes and four navigation layouts"
     ],
     architecture: {
       frontend: "React 18, TypeScript, Vite, React Flow (@xyflow/react), Tailwind CSS, Radix UI, TanStack Query, Recharts",
@@ -287,9 +288,9 @@ export const projectsData: Project[] = [
     tourLabel: "Product tour",
     screenshots: [
       { url: "/projects/chatbot/02-workflows.webp", title: "Workflows", caption: "All chatbot flows with their type and the number of active conversations." },
-      { url: "/projects/chatbot/03-flow-builder.webp", title: "Visual Flow Builder", caption: "The whole booking conversation on one canvas: welcome, menu buttons, name, treatment list, date, confirmation and hand-off." },
-      { url: "/projects/chatbot/03a-flow-zoomed.webp", title: "Blocks and Connections", caption: "Messages, quick-reply buttons and branches that follow the user's choice." },
-      { url: "/projects/chatbot/03b-flow-node-editor.webp", title: "Block Editor", caption: "Edit button labels, the variable the choice is saved into, retries and fallback messages." },
+      { url: "/projects/chatbot/03-flow-builder.webp", title: "Visual Flow Builder", caption: "A whole appointment-booking conversation on one canvas: welcome, service list, date, confirmation and end." },
+      { url: "/projects/chatbot/03a-flow-zoomed.webp", title: "Blocks and Connections", caption: "Messages, selectable lists and user-input blocks, connected so the conversation follows the user's choice." },
+      { url: "/projects/chatbot/03b-flow-node-editor.webp", title: "Block Editor", caption: "Edit the prompt, input type, the variable the answer is saved into, retries and the fallback message." },
       { url: "/projects/chatbot/04-templates.webp", title: "WhatsApp Templates", caption: "Template categories, header and button types, and Meta approval status in one table." },
       { url: "/projects/chatbot/05-initiate-flow.webp", title: "Start a Flow for Contacts", caption: "Search imported contacts and start a flow for the selected people." },
       { url: "/projects/chatbot/06-conversations.webp", title: "Conversations", caption: "Open and past chats with their flow, status and last activity." },
